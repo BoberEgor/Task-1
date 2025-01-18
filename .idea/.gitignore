@@ -1,8 +1,18 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# Исключить все файлы и папки
+*
+
+# Исключить папку src и её содержимое
+!src/
+!src/**
+
+# Исключить файл pom.xml
+!pom.xml
+
+# Исключить системные и IDE-файлы
+.idea/
+.vscode/
+*.iml
+*.swp
+*.tmp
+Thumbs.db
+.DS_Store
