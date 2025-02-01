@@ -22,6 +22,7 @@ public class Util {
             }
             properties.load(input);
 
+
             sessionFactory = new Configuration()
                     .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
                     .setProperty("hibernate.connection.url", properties.getProperty("db.url"))

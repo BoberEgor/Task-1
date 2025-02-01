@@ -95,12 +95,3 @@ public class UserDaoHibernateImpl implements UserDao {
         }
     }
 }
-
-/*
-hibernate.create_table=CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name VARCHAR(100), last_name VARCHAR(100), age INT);
-hibernate.drop_table=DROP TABLE IF EXISTS users;
-hibernate.insert_user=INSERT INTO users (name, last_name, age) VALUES (:name, :lastName, :age);
-hibernate.delete_user=DELETE FROM users WHERE id = :id;
-hibernate.select_all_users=FROM User;
-hibernate.clean_table=DELETE FROM User;
- */
