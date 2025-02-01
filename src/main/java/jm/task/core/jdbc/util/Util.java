@@ -16,13 +16,11 @@ public class Util {
     private static SessionFactory sessionFactory;
 
     static {
-        try {
-            try (InputStream input = Util.class.getClassLoader().getResourceAsStream("application.properties")) {
-                if (input == null) {
-                    throw new RuntimeException("Не удалось найти файл application.properties");
-                }
-                properties.load(input);
+        try (InputStream input = Util.class.getClassLoader().getResourceAsStream("application.properties")) {
+            if (input == null) {
+                throw new RuntimeException("Не удалось найти файл application.properties");
             }
+            properties.load(input);
 
             sessionFactory = new Configuration()
                     .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
@@ -49,10 +47,13 @@ public class Util {
             String url = properties.getProperty("db.url");
             String username = properties.getProperty("db.username");
             String password = properties.getProperty("db.password");
-
             return DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             throw new RuntimeException("Ошибка при подключении к базе данных через JDBC", e);
         }
+    }
+
+    public static String getProperty(String key) {
+        return properties.getProperty(key);
     }
 }
